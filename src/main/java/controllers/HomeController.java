@@ -3,6 +3,7 @@ package controllers;
 import java.util.Scanner;
 
 public class HomeController {
+    
      public String handleLogin() {
         Scanner Scanner = new Scanner(System.in);
 
@@ -17,7 +18,7 @@ public class HomeController {
         if (option == 1) {
             System.out.print("Ingrese la contraseña de Elfo: ");
             String password = Scanner.nextLine();
-            if (password.equals("elf123")) {
+            if (password.equals("elfregalos")) {
                 return "Elf"; 
             } else {
                 System.out.println("Contraseña incorrecta.");
@@ -26,7 +27,7 @@ public class HomeController {
         } else if (option == 2) {
             System.out.print("Ingrese la contraseña de Santa Claus: ");
             String password = Scanner.nextLine();
-            if (password.equals("santa123")) {
+            if (password.equals("santaohoh")) {
                 return "Santa"; 
             } else {
                 System.out.println("Contraseña incorrecta.");
@@ -36,7 +37,9 @@ public class HomeController {
             System.out.println("Opción inválida.");
             return "Invalid";
         }
+        
+        }
     }
 
-    }
+    
     
