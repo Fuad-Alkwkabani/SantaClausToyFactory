@@ -2,41 +2,34 @@ package controllers;
 
 import java.util.List;
 
+import models.BadToy;
+import models.GoodToy;
 import models.Toy;
 import repository.ToyRepository;
 
 public class ToyController {
- private ToyRepository toyRepository;
+  private ToyRepository toyRepository;
 
-   
-
-    public ToyController(ToyRepository toyRepository) {
-    this.toyRepository = new ToyRepository();
+    public ToyController() {
+        this.toyRepository = new ToyRepository();
     }
 
-    public void addToy(Toy toy) {
-        toyRepository.addToy(toy);
-        System.out.println("Juguete añadido con éxito: " + toy);
+    public void addGoodToy(String title, String brand, String age, String category) {
+        GoodToy goodToy = new GoodToy(title, brand, age, category);
+        toyRepository.addToy(goodToy);
     }
+
+    public void addBadToy(String title, String content) {
+        BadToy badToy = new BadToy(title, content);
+        toyRepository.addToy(badToy);
+    }
+
     public List<Toy> getAllToys() {
         return toyRepository.getAllToys();
     }
 
-    public List<Toy> getToysByType(String tipo) {
-        return toyRepository.getToysByType(tipo);
-    }
-    public boolean deleteToy(String id) {
-        boolean removed = toyRepository.deleteToyById(id);
-        if (removed) {
-            System.out.println("Juguete eliminado con éxito (ID: " + id + ")");
-        } else {
-            System.out.println("Juguete no encontrado (ID: " + id + ")");
-        }
-        return removed;
-    }
-
-    public String saveAllToysToString() {
-        return toyRepository.saveToString();
+    public boolean deleteToy(String toyId) {
+        return toyRepository.deleteToy(toyId);
     }
 
 }

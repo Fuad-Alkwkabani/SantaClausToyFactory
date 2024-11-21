@@ -1,41 +1,19 @@
 package models;
 
 public class GoodToy extends Toy {
+    private String brand;
+    private String age;
+    private String category;
 
-    private String marca;
-    private String edadRecomendada;
-    private String categoria;
-    
-    public GoodToy(String id, String titulo, String tipo, String marca, String edadRecomendada, String categoria) {
-        super(id, titulo, tipo);
-        this.marca = marca;
-        this.edadRecomendada = edadRecomendada;
-        this.categoria = categoria;
+    public GoodToy(String title, String brand, String age, String category) {
+        super(title);
+        this.brand = brand;
+        this.age = age;
+        this.category = category;
     }
 
-    public String getMarca() {
-        return marca;
+    @Override
+    public String toString() {
+        return super.toString() + ", Marca: " + brand + ", Edad Recomendada: " + age + ", Categoría: " + category;
     }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public String getEdadRecomendada() {
-        return edadRecomendada;
-    }
-
-    public void setEdadRecomendada(String edadRecomendada) {
-        this.edadRecomendada = edadRecomendada;
-    }
-
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
-
-    
 }

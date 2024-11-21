@@ -1,47 +1,26 @@
 package models;
 
-public class Toy {
+import java.util.UUID;
+
+public abstract class Toy {
     private String id;
-    private String titulo;
-    private String tipo;
+    private String title;
 
-
-    public Toy(String id, String titulo, String tipo) {
-        this.id = id;
-        this.titulo = titulo;
-        this.tipo = tipo;
+    public Toy(String title) {
+        this.id = UUID.randomUUID().toString(); // Generar un ID único
+        this.title = title;
     }
-
 
     public String getId() {
         return id;
     }
 
-
-    public void setId(String id) {
-        this.id = id;
+    public String getTitle() {
+        return title;
     }
 
-
-    public String getTitulo() {
-        return titulo;
+    @Override
+    public String toString() {
+        return "ID: " + id + ", Título: " + title;
     }
-
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-
-    public String getTipo() {
-        return tipo;
-    }
-
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    } 
-
-    
-
 }

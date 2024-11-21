@@ -1,21 +1,15 @@
 package models;
 
 public class BadToy extends Toy {
+    private String content;
 
-    private String contenido;
-
-    public BadToy(String id, String titulo, String tipo, String contenido) {
-        super(id, titulo, tipo);
-        this.contenido = contenido;
+    public BadToy(String title, String content) {
+        super(title);
+        this.content = content;
     }
 
-    public String getContenido() {
-        return contenido;
+    @Override
+    public String toString() {
+        return super.toString() + ", Contenido: " + content;
     }
-
-    public void setContenido(String contenido) {
-        this.contenido = contenido;
-    }
-
-    
 }
