@@ -11,6 +11,51 @@ public class GoodToy extends Toy {
         this.age = age;
         this.category = category;
     }
+    
+
+
+
+    public String getBrand() {
+        return brand;
+    }
+
+
+
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+
+
+
+    public String getAge() {
+        return age;
+    }
+
+
+
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+
+
+
+    public String getCategory() {
+        return category;
+    }
+
+
+
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+
+
 
     @Override
     public String toString() {

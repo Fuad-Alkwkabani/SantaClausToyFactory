@@ -16,12 +16,12 @@ public class HomeView {
         switch (loginResult) {
             case "Elf":
                 ElfView elfView = new ElfView();
-                elfView.showElfMenu(); // Redirige al menú de Elfo
+                elfView.showElfMenu(); 
                 break;
 
             case "Santa":
                 SantaView santaView = new SantaView();
-                santaView.showSantaMenu(); // Redirige al menú de Santa Claus
+                santaView.showSantaMenu(); 
                 break;
 
             default:

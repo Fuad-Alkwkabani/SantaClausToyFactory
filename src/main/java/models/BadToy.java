@@ -8,8 +8,22 @@ public class BadToy extends Toy {
         this.content = content;
     }
 
+    
+
     @Override
     public String toString() {
         return super.toString() + ", Contenido: " + content;
+    }
+
+
+
+    public String getContent() {
+        return content;
+    }
+
+
+
+    public void setContent(String content) {
+        this.content = content;
     }
 }

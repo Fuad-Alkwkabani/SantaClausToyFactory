@@ -7,7 +7,7 @@ public abstract class Toy {
     private String title;
 
     public Toy(String title) {
-        this.id = UUID.randomUUID().toString(); // Generar un ID único
+        this.id = UUID.randomUUID().toString(); 
         this.title = title;
     }
 

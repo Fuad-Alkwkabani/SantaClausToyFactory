@@ -18,7 +18,7 @@ public class ToyRepository {
     }
 
     public List<Toy> getAllToys() {
-        return new ArrayList<>(toyList); // Devolver una copia para evitar modificaciones externas
+        return new ArrayList<>(toyList); 
     }
 
     public boolean deleteToy(String toyId) {

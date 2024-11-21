@@ -10,7 +10,7 @@ public class ElfView {
     private ToyController toyController;
 
     public ElfView() {
-        this.toyController = new ToyController(); // Conectar con el controlador de juguetes
+        this.toyController = new ToyController(); 
     }
 
     public void showElfMenu() {
@@ -27,7 +27,7 @@ public class ElfView {
             System.out.print("Seleccione una opción: ");
 
             option = scanner.nextInt();
-            scanner.nextLine(); // Limpiar el buffer
+            scanner.nextLine(); 
 
             switch (option) {
                 case 1:
@@ -47,7 +47,7 @@ public class ElfView {
             }
         } while (option != 4);
 
-        scanner.close(); // Cerrar el scanner al final de la sesión
+        scanner.close(); 
     }
 
     private void addToy(Scanner scanner) {
@@ -56,7 +56,7 @@ public class ElfView {
         System.out.println("2. Malo");
         System.out.print("Seleccione una opción: ");
         int type = scanner.nextInt();
-        scanner.nextLine(); // Limpiar el buffer
+        scanner.nextLine(); 
 
         if (type == 1) {
             System.out.print("Ingrese el título: ");
