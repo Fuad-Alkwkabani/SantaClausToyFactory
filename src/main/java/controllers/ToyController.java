@@ -1,75 +1,70 @@
 package controllers;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-
-import models.BadToy;
-import models.GoodToy;
-import models.Toy;
-import repository.ToyRepository;
+import dtos.BadToyDto;
+import dtos.GoodToyDto;
+import views.ElfView;
+import views.SantaView;
 
 public class ToyController {
- private ToyRepository toyRepository;
 
-    public ToyController() {
-        this.toyRepository = new ToyRepository();
+    private final List<GoodToyDto> goodToys = new ArrayList<>();
+    private final List<BadToyDto> badToys = new ArrayList<>();
+
+    public ToyController(ElfView elfView, SantaView santaView) {
     }
 
-    public void addGoodToy(String title, String brand, String age, String category) {
-        GoodToy goodToy = new GoodToy(title, brand, age, category);
-        toyRepository.addToy(goodToy);
+    // Método para gestionar las opciones del elfo
+    public void startElfSession() {
+        ElfView.showElfMenu();
     }
 
+    // Método para gestionar las opciones de Santa
+    public void startSantaSession() {
+        SantaView.showSantaMenu();
+    }
+
+    // Métodos para manipular los juguetes
+
+    // Añadir un juguete para niño bueno
+    public void addGoodToy(String title, String brand, int recommendedAge, String category) {
+        GoodToyDto newToy = new GoodToyDto(title, brand, recommendedAge, category);
+        goodToys.add(newToy);
+        System.out.println("Juguete para niños buenos añadido: " + title);
+    }
+
+    // Añadir un juguete para niño malo
     public void addBadToy(String title, String content) {
-        BadToy badToy = new BadToy(title, content);
-        toyRepository.addToy(badToy);
+        BadToyDto newToy = new BadToyDto(title, content);
+        badToys.add(newToy);
+        System.out.println("Juguete para niños malos añadido: " + title);
     }
 
-    public List<Toy> getAllToys() {
-        return toyRepository.getAllToys();
+    // Ver los juguetes para niños buenos
+    public List<GoodToyDto> getGoodToys() {
+        return goodToys;
     }
 
-    public List<GoodToy> getGoodToys() {
-        return toyRepository.getAllToys().stream()
-                .filter(toy -> toy instanceof GoodToy)
-                .map(toy -> (GoodToy) toy)
-                .collect(Collectors.toList());
+    // Ver los juguetes para niños malos
+    public List<BadToyDto> getBadToys() {
+        return badToys;
     }
 
-    public List<BadToy> getBadToys() {
-        return toyRepository.getAllToys().stream()
-                .filter(toy -> toy instanceof BadToy)
-                .map(toy -> (BadToy) toy)
-                .collect(Collectors.toList());
-    }
-
-    public boolean deleteToy(String toyId) {
-        return toyRepository.deleteToy(toyId);
-    }
-
-    public void saveToysToCsv() throws IOException {
-        List<Toy> toys = toyRepository.getAllToys();
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("toys.csv"))) {
-            writer.write("ID,Título,Tipo,Detalles\n");
-            for (Toy toy : toys) {
-                if (toy instanceof GoodToy) {
-                    GoodToy goodToy = (GoodToy) toy;
-                    writer.write(toy.getId() + "," + toy.getTitle() + ",Bueno," +
-                            "Marca: " + goodToy.getBrand() +
-                            ",Edad: " + goodToy.getAge() +
-                            ",Categoría: " + goodToy.getCategory() + "\n");
-                } else if (toy instanceof BadToy) {
-                    BadToy badToy = (BadToy) toy;
-                    writer.write(toy.getId() + "," + toy.getTitle() + ",Malo," +
-                            "Contenido: " + badToy.getContent() + "\n");
-                }
-            }
+    // Eliminar un juguete
+    public void deleteToy(String title, boolean isGoodToy) {
+        if (isGoodToy) {
+            goodToys.removeIf(toy -> toy.title().equals(title));
+            System.out.println("Juguete para niños buenos eliminado: " + title);
+        } else {
+            badToys.removeIf(toy -> toy.title().equals(title));
+            System.out.println("Juguete para niños malos eliminado: " + title);
         }
     }
 
+    // Exportar juguetes a CSV (simulado)
+    public void exportToysToCSV() {
+        System.out.println("Exportando juguetes a CSV...");
+        // Aquí iría la lógica para generar el archivo CSV.
+    }
 }
-
-

@@ -1,13 +1,11 @@
 package models;
 
-import java.util.UUID;
-
 public abstract class Toy {
-    private String id;
-    private String title;
+    private final String id;
+    private final String title;
 
-    public Toy(String title) {
-        this.id = UUID.randomUUID().toString(); 
+    public Toy(String id, String title) {
+        this.id = id;
         this.title = title;
     }
 
@@ -18,6 +16,8 @@ public abstract class Toy {
     public String getTitle() {
         return title;
     }
+
+    public abstract String toCSV(); // Método para exportar a CSV
 
     @Override
     public String toString() {

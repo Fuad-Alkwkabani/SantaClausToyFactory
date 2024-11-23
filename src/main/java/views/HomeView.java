@@ -1,34 +1,35 @@
 package views;
 
-import controllers.HomeController;
+import java.util.Scanner;
 
-public class HomeView {
+public class HomeView extends View {
 
-    private HomeController homeController;
+        private static final Scanner scanner = new Scanner(System.in);
 
-    public HomeView(HomeController homeController) {
-        this.homeController = homeController;
-    }
 
-    public void showMenu() {
-        String loginResult = homeController.handleLogin();
+    public static void showMenu() {
+        while (true) {
+            // Mostrar menú de inicio
+            System.out.println("Iniciar sesión de trabajo como:");
+            System.out.println("1. Elfo");
+            System.out.println("2. Santa Claus");
+            System.out.println("3. Salir");
+            System.out.print("Seleccione una opción: ");
 
-        switch (loginResult) {
-            case "Elf":
-                ElfView elfView = new ElfView();
-                elfView.showElfMenu(); 
-                break;
+            int option = scanner.nextInt();
 
-            case "Santa":
-                SantaView santaView = new SantaView();
-                santaView.showSantaMenu(); 
-                break;
-
-            default:
-                System.out.println("Inicio de sesión fallido. Cerrando la aplicación.");
-                break;
+            switch (option) {
+                case 1 -> ElfView.showElfMenu();  // Redirigir al flujo de Elfo
+                case 2 -> SantaView.showSantaMenu(); // Redirigir al flujo de Santa Claus
+                case 3 -> quit();            // Salir del programa
+                default -> System.out.println("Opción no válida. Inténtelo de nuevo.");
+            }
         }
     }
+
+    public static void quit() {
+        System.out.println("Cerrando sesión. ¡Feliz Navidad!");
+        scanner.close();
+        System.exit(0);
+    }
 }
-
-
