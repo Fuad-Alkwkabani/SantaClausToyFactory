@@ -10,6 +10,7 @@ public class GoodToy extends Toy {
         this.details = details;
     }
 
+
     public GoodToyDto getDetails() {
         return details;
     }

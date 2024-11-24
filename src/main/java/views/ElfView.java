@@ -40,7 +40,7 @@ public class ElfView extends View {
         System.out.print("Seleccione una opción: ");
 
         int type = scanner.nextInt();
-        scanner.nextLine(); // Consumir salto de línea
+        scanner.nextLine(); 
 
         if (type == 1) {
             System.out.print("Ingrese el título: ");
@@ -49,7 +49,7 @@ public class ElfView extends View {
             String brand = scanner.nextLine();
             System.out.print("Ingrese la edad recomendada: ");
             int recommendedAge = scanner.nextInt();
-            scanner.nextLine(); // Consumir salto de línea
+            scanner.nextLine(); 
             System.out.print("Ingrese la categoría: ");
             String category = scanner.nextLine();
 

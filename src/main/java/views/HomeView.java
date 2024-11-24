@@ -9,7 +9,7 @@ public class HomeView extends View {
 
     public static void showMenu() {
         while (true) {
-            // Mostrar menú de inicio
+            
             System.out.println("Iniciar sesión de trabajo como:");
             System.out.println("1. Elfo");
             System.out.println("2. Santa Claus");
@@ -19,9 +19,9 @@ public class HomeView extends View {
             int option = scanner.nextInt();
 
             switch (option) {
-                case 1 -> ElfView.showElfMenu();  // Redirigir al flujo de Elfo
-                case 2 -> SantaView.showSantaMenu(); // Redirigir al flujo de Santa Claus
-                case 3 -> quit();            // Salir del programa
+                case 1 -> ElfView.showElfMenu();  
+                case 2 -> SantaView.showSantaMenu(); 
+                case 3 -> quit();            
                 default -> System.out.println("Opción no válida. Inténtelo de nuevo.");
             }
         }

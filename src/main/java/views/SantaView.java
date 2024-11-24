@@ -8,7 +8,7 @@ public class SantaView extends View {
 
     public static void showSantaMenu() {
         while (true) {
-            // Menú de gestión para Santa Claus
+           
             System.out.println("-----------");
             System.out.println("Gestor de juguetes (Tipo de sesión: Santa)");
             System.out.println("1. Ver lista de juguetes niños buenos");

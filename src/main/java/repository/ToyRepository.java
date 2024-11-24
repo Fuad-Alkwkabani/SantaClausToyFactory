@@ -12,11 +12,11 @@ import models.Toy;
 
 public class ToyRepository {
 
-    // Almacenes de juguetes
+    
     private final List<Toy> goodToys = new ArrayList<>();
     private final List<Toy> badToys = new ArrayList<>();
 
-    // Singleton
+    
     private static ToyRepository instance;
 
     private ToyRepository() {}
@@ -28,7 +28,7 @@ public class ToyRepository {
         return instance;
     }
 
-    // Métodos de gestión de juguetes
+    
     public void addGoodToy(String title, String brand, int recommendedAge, String category) {
         GoodToyDto toy = new GoodToyDto(title, brand, recommendedAge, category);
         goodToys.add(new GoodToy(UUID.randomUUID().toString(), toy));
@@ -48,7 +48,7 @@ public class ToyRepository {
     }
 
     public List<Toy> getAllToys() {
-        // Combinar ambas listas de juguetes
+        
         List<Toy> allToys = new ArrayList<>(goodToys);
         allToys.addAll(badToys);
         return allToys;
@@ -68,10 +68,10 @@ public class ToyRepository {
                 writer.write("\n");
             }
 
-            return true; // Éxito
+            return true; 
         } catch (IOException e) {
             e.printStackTrace();
-            return false; // Error al escribir el archivo
+            return false; 
         }
     }
 }

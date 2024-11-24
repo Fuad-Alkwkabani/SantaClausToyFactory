@@ -17,7 +17,7 @@ public abstract class Toy {
         return title;
     }
 
-    public abstract String toCSV(); // Método para exportar a CSV
+    public abstract String toCSV(); 
 
     @Override
     public String toString() {
