@@ -6,6 +6,8 @@ public class HomeView extends View {
 
         private static final Scanner scanner = new Scanner(System.in);
 
+        
+
 
     public static void showMenu() {
         while (true) {
