@@ -1,47 +1,26 @@
 package models;
 
-public class Toy {
-    private String id;
-    private String titulo;
-    private String tipo;
+public abstract class Toy {
+    private final String id;
+    private final String title;
 
-
-    public Toy(String id, String titulo, String tipo) {
+    public Toy(String id, String title) {
         this.id = id;
-        this.titulo = titulo;
-        this.tipo = tipo;
+        this.title = title;
     }
-
 
     public String getId() {
         return id;
     }
 
-
-    public void setId(String id) {
-        this.id = id;
+    public String getTitle() {
+        return title;
     }
 
+    public abstract String toCSV(); 
 
-    public String getTitulo() {
-        return titulo;
+    @Override
+    public String toString() {
+        return "ID: " + id + ", Título: " + title;
     }
-
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-
-    public String getTipo() {
-        return tipo;
-    }
-
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    } 
-
-    
-
 }

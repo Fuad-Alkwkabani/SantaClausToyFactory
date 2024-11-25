@@ -1,5 +1,9 @@
 package views;
 
-public class View {
+import java.util.Scanner;
+
+
+public abstract class View {
+    protected static final Scanner scanner = new Scanner(System.in);
 
 }

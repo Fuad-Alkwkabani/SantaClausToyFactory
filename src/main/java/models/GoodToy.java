@@ -1,41 +1,27 @@
 package models;
 
+import dtos.GoodToyDto;
+
 public class GoodToy extends Toy {
+    private final GoodToyDto details;
 
-    private String marca;
-    private String edadRecomendada;
-    private String categoria;
-    
-    public GoodToy(String id, String titulo, String tipo, String marca, String edadRecomendada, String categoria) {
-        super(id, titulo, tipo);
-        this.marca = marca;
-        this.edadRecomendada = edadRecomendada;
-        this.categoria = categoria;
+    public GoodToy(String id, GoodToyDto details) {
+        super(id, details.title());
+        this.details = details;
     }
 
-    public String getMarca() {
-        return marca;
+
+    public GoodToyDto getDetails() {
+        return details;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
+    @Override
+    public String toCSV() {
+        return getId() + ",Bueno," + details.title() + "," + details.brand() + "," + details.recommendedAge() + "," + details.category();
     }
 
-    public String getEdadRecomendada() {
-        return edadRecomendada;
+    @Override
+    public String toString() {
+        return super.toString() + ", Marca: " + details.brand() + ", Edad recomendada: " + details.recommendedAge() + ", Categoría: " + details.category();
     }
-
-    public void setEdadRecomendada(String edadRecomendada) {
-        this.edadRecomendada = edadRecomendada;
-    }
-
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
-
-    
 }
