@@ -1,4 +1,3 @@
-
 <h1>Proyecto de Gestión de Juguetes de Santa Claus 🎄 🎅🏼</h1>
 
 <h2>Descripción</h2>
@@ -41,11 +40,17 @@
     <p>A continuación se muestran los diagramas realizados para este proyecto:</p>
     <ul>
         <li>Diagrama de clases.</li>
+        <img src="/foto/Captura desde 2024-11-25 13-15-01.png" alt="Diagrama" />
         <li>Diagrama de flujo.</li>
+        <img src="ruta-a-tu-diagrama.png" alt="Diagrama" />
         <li>Diagrama de arquitectura MVC.</li>
+    <pre>
+             MODELO                       CONTROLADOR                VISTA
+            --------                      -----------                -------
+            GoodToyDatabase    <------    ToyController    ----->   SantaView
+            BadToyDatabase    <------    HomeController    ----->   ElfView
+            IDatabase                                      ----->   HomeView
+    </pre>
     </ul>
-    <img src="ruta-a-tu-diagrama.png" alt="Diagrama" />
-
+    
   <p><strong>Autor:</strong> FUAD AL KWKABANI  <a href="https://github.com/Fuad-Alkwkabani">GitHub</a>
-
-
