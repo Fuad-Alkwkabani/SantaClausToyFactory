@@ -1,5 +1,5 @@
 
-<h1>Proyecto de Gestión de Juguetes de Santa Claus</h1>
+<h1>Proyecto de Gestión de Juguetes de Santa Claus 🎄 🎅🏼</h1>
 
 <h2>Descripción</h2>
     <p>Este proyecto es una aplicación de consola desarrollada en Java que simula la gestión de juguetes para niños buenos y niños malos. El sistema está diseñado para ser utilizado por los elfos de Santa Claus y por el mismo Santa. Los elfos pueden agregar, listar y eliminar juguetes, mientras que Santa puede ver la lista de juguetes y exportarlos a un archivo CSV.</p>
