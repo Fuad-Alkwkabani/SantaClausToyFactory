@@ -42,7 +42,7 @@
         <li>Diagrama de clases.</li>
         <img src="/foto/Captura desde 2024-11-25 13-15-01.png" alt="Diagrama" />
         <li>Diagrama de flujo.</li>
-        <img src="ruta-a-tu-diagrama.png" alt="Diagrama" />
+        <img src="/foto/Imagen pegada.png" alt="Diagarma de Flujo">
         <li>Diagrama de arquitectura MVC.</li>
     <pre>
              MODELO                       CONTROLADOR                VISTA
